@@ -9,9 +9,8 @@ def subarray_sum(nums: List[int], k: int) -> int:
     curr_sum = 0
 
     # for i in range(len(nums)):
-    #     for j in range(len(nums)):
-    #         curr_sum = sum(nums[i : j + 1])
-    #         print(f"curr_sum: {curr_sum}")
+    #     for j in range(i,len(nums)):
+    #         curr_sum += nums[j]
     #         if curr_sum == k:
     #             count += 1
     # This is a brute force solution, it's not efficient because it's O(n^2) time complexity.
@@ -33,7 +32,7 @@ def subarray_sum(nums: List[int], k: int) -> int:
 
 
 if __name__ == "__main__":
-    nums_list = [1, 2, 3]
-    target_sum = 3
+    nums_list = [1, 1, 1]
+    target_sum = 2
     RESULT = subarray_sum(nums_list, target_sum)
     print(f"Result: {RESULT}")
