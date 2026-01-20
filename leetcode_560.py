@@ -17,7 +17,7 @@ def subarray_sum(nums: List[int], k: int) -> int:
     # We can use a hash map to store the cumulative sum and the number of times it appears.
     # Then we can use the hash map to check if the cumulative sum - k exists in the hash map.
     # If it does, we add the number of times it appears to the count.
-    # This is a more efficient solution because it's O(n) time complexity.
+    # This is a more efficient solution because it's O(n) time complexity and O(n) space complexity.
 
     hash_map = {0: 1}
 
