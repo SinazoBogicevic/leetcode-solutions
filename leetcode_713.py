@@ -14,10 +14,15 @@ def numSubarrayProductLessThanK(nums: List[int], k: int) -> int:
     #         if prod < k:
     #             count += 1
 
+    # edge case
+    # If k is 0 or 1, no product of positive integers can be < k
+    # if k <= 1:
+    #     return 0
+
     for r in range(len(nums)):
         prod *= nums[r]
         while prod >= k and l <= r:
-            prod = prod / nums[l]
+            prod = prod // nums[l]
             l += 1
 
         count += (r - l) + 1
