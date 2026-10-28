@@ -1,0 +1,32 @@
+def permuteUnique(nums: list[int]) -> list[list[int]]:
+    n = len(nums)
+    nums.sort()  # helps our duplicate skipping logic on line
+    sol: list[int] = []
+    res: list[list[int]] = []
+    used: list[bool] = [False] * n
+
+    def backtracking():
+
+        if len(sol) == n:
+            res.append(
+                sol[:]
+            )  # without [:] we are copying a reference to sol and lists are mutable
+            return
+
+        for i in range(n):
+
+            if used[i]:
+                continue
+
+            if i > 0 and nums[i] == nums[i - 1] and not used[i - 1]:
+                continue
+
+            used[i] = True
+            sol.append(nums[i])
+            backtracking()
+            used[i] = False
+            sol.pop()
+
+    backtracking()
+
+    return res

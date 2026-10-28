@@ -13,7 +13,6 @@ def reverseList(head: Optional[ListNode]) -> Optional[ListNode]:
     while curr:
         temp = curr.next
         curr.next = prev
-        print(f"curr.val: {curr.val}")
         prev = curr
         curr = temp
 
